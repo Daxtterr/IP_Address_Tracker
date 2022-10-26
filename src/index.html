@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+
+    <title>Tracker</title>
+  </head>
+  <body>
+    <header>
+      <div class="bg-hero py-6 space-y-6">
+        <h1 class="font-bold text-center text-2xl text-white">
+          IP Address Tracker
+        </h1>
+        <div class="space-x-0 flex justify-center">
+          <input
+            id="ip_address"
+            type="text"
+            placeholder="Search for any IP address or domain; 8.8.8.8"
+            class="md:w-4/12 w-9/12 py-3 text-sm px-3 rounded-l-lg outline-none"
+          />
+          <button
+            id="search_btn"
+            class="bg-black px-2 py-2 text-white rounded-r-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="10"
+              height="20"
+              class=" "
+            >
+              <path
+                fill="none"
+                stroke="#FFF"
+                stroke-width="2"
+                d="M1 4l6 6-6 6"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="space-y-4 md:space-y-0 text-center md:text-left mx-auto flex flex-col md:flex-row md:divide-x-2 w-10/12 md:w-9/12 bg-white md:px-4 lg:px-12 py-3 rounded-lg"
+        >
+          <div class="basis-1/4">
+            <p class="text-xs text-slate-700">IP ADDRESS</p>
+            <p id="current_ip" class="text-xl font-bold break-all"></p>
+          </div>
+          <div class="basis-1/4 px-2">
+            <p class="text-xs text-slate-700">LOCATION</p>
+            <p id="current_town" class="text-xl font-bold"></p>
+          </div>
+          <div class="basis-1/4 px-2">
+            <p class="text-xs text-slate-700">TIMEZONE</p>
+            <p id="current_zone" class="text-xl font-bold"></p>
+          </div>
+          <div class="basis-1/4 pl-2 lg:pr-16">
+            <p class="text-xs text-slate-700">ISP</p>
+            <p id="current_isp" class="text-xl font-bold"></p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="map" class="z-10"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
